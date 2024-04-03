@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safe Travellers - Online Booking</title>
+  <style>
+    body {
+      background-color: #f0f8ff; /* Light Blue background color */
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .booking-container {
+      background-color: #fff; /* White background color for the form */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 400px; /* Fixed width */
+    }
+    .booking-form label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .booking-form input,
+    .booking-form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .booking-form button {
+      background-color: #007bff; /* Blue button color */
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+    }
+    .booking-form button:hover {
+      background-color: #0056b3; /* Darker blue color on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="booking-container">
+    <h1>Safe Travellers - Online Booking</h1>
+  
+    <form id="booking-form" onsubmit="return false;" class="booking-form">
+      <label for="id_no">ID Number:</label>
+      <input type="text" id="id_no" name="id_no" required><br>
+      
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br>
+      
+      <label for="tel_no">Telephone Number:</label>
+      <input type="tel" id="tel_no" name="tel_no" required><br>
+      
+      <label for="pickup_station">Pickup Station:</label>
+      <select id="pickup_station" name="pickup_station" required>
+        <option value="Kakamega-Mombasa">Kakamega-Mombasa</option>
+        <option value="Nairobi-Mombasa">Nairobi-Mombasa</option>
+        <option value="Mombasa-Kakamega">Mombasa-Kakamega</option>
+      </select><br>
+      
+      <label for="destination">Destination:</label>
+      <select id="destination" name="destination" required>
+        <option value="Mombasa">Mombasa</option>
+        <!-- Add more destination options as needed -->
+      </select><br>
+      
+      <label for="seat_number">Select Seat Number (1-15):</label>
+      <input type="number" id="seat_number" name="seat_number" min="1" max="15" required><br>
+      
+      <button type="submit" onclick="bookSeat()">Book Now</button>
+    </form>
+  </div>
+  
+  <button onclick="printReceipt()" style="margin-top: 20px;">Print Receipt</button>
+  
+  <script>
+    function printReceipt() {
+      window.print(); // Print the page
+    }
+    
+    function bookSeat() {
+      // Add JavaScript code to handle booking of the seat
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Interactive Personal Portfolio</title>
+  <style>
+    /* Styles for the body */
+    body {
+      background-color: #ADD8E6;
+    }
+
+    /* Styles for all sections */
+    section {
+      padding: 40px;
+      margin-bottom: 20px;
+      background-color: #FFC0CB;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Styles for form in the contacts page */
+    .contact-form {
+      background-color: #ffc107;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+    }
+
+    .contact-form button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .contact-form button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Styles for navigation bar */
+    nav {
+      background-color: #28a745;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+    }
+
+    nav ul li {
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+
+    nav ul li a:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Maureen Personal Portfolio</h1>
+      <nav>
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="container">
+	<img src="C:\Users\Admin\Desktop\BIT 214 WEB PROJECT\pc_pic.jpeg" alt="Description of the image">
+      <h2>Welcome to My Portfolio</h2>
+      <p>My name is maureen,welcome to my portfolio..This project involved designing and developing a personal portfolio website to showcase my skills, projects, and achievements. The website features a responsive design, interactive elements, and custom animations.</p>
+      <a href="#contact" class="btn">Get in Touch with Maureen</a>
+    </div>
+  </section>
+
+ <section id="about">
+  <div class="container">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <div class="about-image">
+        <img src="C:\Users\Admin\Desktop\BIT 214 WEB PROJECT\profile_pic.jpg" width= "320" height = "240"alt="Profile Picture">
+      </div>
+      <div class="about-text">
+        <p>Hello! My name is Maureen Cherotich and I am an undergraduate student pursuing Bachelors degree in edcation science at Masinde muliro unversity of science and technology. I am passionate about my studies and I enjoy being astudent here at Masinde muliro university.</p>
+        <p>In my free time, I like visiting the library and do researches concerning the courses am studying. I am constantly seeking opportunities to learn and grow, both academically and personal
+        <p>Throughout my academic journey, I have gained valuable skills in teaching as a teacher trainee.I have an experience in web systems and technologies,writing CSS,HTML and Java Script code .</p>
+        <p>I am excited to showcase my achievements, skills, and projects through this personal portfolio website. Thank you for visiting my portfolio!</p>
+       <ul class="skills-list">
+         <p><u>MY SKILLS</p></u>
+		 <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>Responsive Web Design</li>
+          <li>Bootstrap</li>
+          <li>jQuery</li>
+          <li>Git</li>
+          <li>GitHub</li>
+          <!-- Add more skills as needed -->
+        </ul>
+	 </div>
+    </div>
+  </div>
+</section>
+
+  <section id="services">
+    <div class="container">
+    <h2>Our Services</h2>
+    <div class="service">
+      <h3>Web Development services</h3>
+      <p> Designing and developing responsive websites using modern HTML, CSS, and JavaScript techniques.By Creating custom web applications tailored to clients' specific needs and requirementsand also Providing website maintenance and support services to ensure optimal performance and security. leo quis justo maximus ultricies ac eu nisi.</p>
+    </div>
+    <div class="service">
+      <h3>Graphic design services</h3>
+      <p>This service is used for Designing logos, branding materials, and visual identities for individuals and businesses..</p>
+    </div>
+    <div class="service">
+      <h3>Digital marketing services</h3>
+      <p>Purposely for managing social media accounts and creating engaging content to build brand awareness and engage with followers and also Conducting SEO audits and implementing strategies to improve search engine rankings and organic traffic.</p>
+    </div>
+    <!-- Add more services as needed -->
+  </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Featured Projects</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut leo quis justo maximus ultricies ac eu nisi.</p>
+      <!-- Add content for Projects section -->
+    </div>
+  </section>
+
+  <section id="contact">
+  <div class="container">
+    <h2>Contact Me</h2>
+    <div class="contact-form">
+      <form action="submit.php" method="post">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+    <div class="contact-info">
+      <p>You can also reach me directly via email:</p>
+      <p>Email: maureenchero68@gmail.com</p>
+      <p>Phone: 0798179769</p>
+      <p>Follow me on social media:</p>
+      <ul class="social-links">
+        <li><a href="#"><img src="facebook.png" alt="Facebook"></a></li>
+        <li><a href="#"><img src="twitter.png" alt="Twitter"></a></li>
+        <li><a href="#"><img src="linkedin.png" alt="LinkedIn"></a></li>
+        <li><a href="#"><img src="instagram.png" alt="Instagram"></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Interactive Personal Portfolio</p>
+    </div>
+  </footer>
+</body>
+</html>
