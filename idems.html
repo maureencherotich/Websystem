@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Learning Platform</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff; /* Light Blue background color */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background-color: #fff; /* White background color for the container */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    #test {
+      margin-bottom: 10px;
+    }
+    #results {
+      margin-top: 20px;
+    }
+    #test-container {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>E-Learning Platform</h1>
+    <form id="login-form">
+      <label for="registration_number">Registration Number:</label>
+      <input type="text" id="registration_number" name="registration_number" required><br>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required><br>
+      <button type="button" onclick="login()">Login</button>
+    </form>
+
+    <div id="test-container">
+      <div id="timer">30s</div>
+      <div id="test"></div>
+      <button onclick="submitTest()">Submit</button>
+      <button onclick="generateTest()">Refresh</button>
+      <div id="results"></div>
+    </div>
+  </div>
+
+  <script>
+    let timer;
+    let remainingTime = 30;
+    const answers = [];
+
+    function login() {
+      // Mock login functionality
+      document.getElementById("login-form").classList.add("hidden");
+      document.getElementById("test-container").style.display = "block";
+      generateTest();
+      startTimer();
+    }
+
+    function generateTest() {
+      const testElement = document.getElementById("test");
+      testElement.innerHTML = ""; // Clear previous test
+      answers.length = 0; // Clear previous answers
+
+      for (let i = 0; i < 5; i++) {
+        const num1 = Math.floor(Math.random() * 90) + 10; // Generate two-digit number
+        const num2 = Math.floor(Math.random() * 90) + 10; // Generate two-digit number
+        const operator = Math.random() < 0.5 ? "+" : "-"; // Randomly choose between + and -
+        const answer = operator === "+" ? num1 + num2 : num1 - num2; // Calculate correct answer
+        answers.push(answer); // Store correct answer
+
+        testElement.innerHTML += `<div id="question${i}" style="margin-bottom: 10px;">
+          ${num1} ${operator} ${num2} = <input type="number" id="answer${i}">
+          <span id="correctAnswer${i}" style="display: none;">Correct Answer: ${answer}</span>
+        </div>`;
+      }
+    }
+
+    function startTimer() {
+      timer = setInterval(updateTimer, 1000);
+    }
+
+    function updateTimer() {
+      remainingTime--;
+      document.getElementById("timer").textContent = remainingTime + "s";
+
+      if (remainingTime === 0) {
+        clearInterval(timer);
+        submitTest();
+      }
+    }
+
+    function submitTest() {
+      clearInterval(timer);
+      const resultsElement = document.getElementById("results");
+      resultsElement.innerHTML = "<h2>Test Results:</h2>";
+
+      let correctAnswers = 0;
+      for (let i = 0; i < 5; i++) {
+        const answer = parseInt(document.getElementById(`answer${i}`).value);
+        const correctAnswer = answers[i];
+        const questionElement = document.getElementById(`question${i}`);
+
+        resultsElement.innerHTML += `${questionElement.textContent.trim()} ${answer === correctAnswer ? "(Correct)" : "(Incorrect)"}<br>`;
+        document.getElementById(`correctAnswer${i}`).style.display = "inline"; // Show correct answer
+
+        if (answer === correctAnswer) {
+          correctAnswers++;
+        }
+      }
+
+      resultsElement.innerHTML += `<br>Total Correct Answers: ${correctAnswers} out of 5`;
+    }
+  </script>
+</body>
+</html>
